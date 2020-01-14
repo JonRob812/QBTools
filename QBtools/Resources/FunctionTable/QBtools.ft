@@ -1,0 +1,50 @@
+﻿###############################################################################
+# NETHook function table			
+###############################################################################
+#
+# Name		: QBtools.ft
+# NETHook 	: QBtools.dll
+# Date		: 12/11/2019
+# Author	: JonRob
+# Notes		: Contact sdk@mastercam.com for additional assistance.  
+#                 Attention: Mick George
+# Language	: C#
+#
+###############################################################################
+
+
+######################
+# ASSIGN A UNIQUE NAME
+######################
+APPLICATION "_QBtools_"
+
+######################
+# NETHook LOCATION
+######################
+#
+FUNC_DLL   "CHOOKS\QBtools.dll"
+RES_DLL    "SAME"
+dnRES_NAME "QBtools.Properties.Resources"
+CATEGORY   "Quickbase"
+
+##############################################################################
+# Public functions here
+##############################################################################
+#
+
+FUNCTION NET "Run"
+    dnSPNG "Run16"
+    dnLPNG "Run32"
+    dnTIP  "quickbasebutton"
+END_FUNCTION
+
+# User entry point
+FUNCTION NET "RunUserDefined"
+    dnSPNG "Run16"
+    dnLPNG "Run32"
+    dnTIP  "FirstTimeRunning"
+END_FUNCTION
+
+
+#
+# EOF
